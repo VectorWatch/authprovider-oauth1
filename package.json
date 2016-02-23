@@ -1,0 +1,27 @@
+{
+  "name": "vectorwatch-authprovider-oauth1",
+  "version": "1.0.0",
+  "description": "A VectorWatch auth provider that uses OAuth protocol version 1.0a to authenticate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VectorWatch/authprovider-oauth1.git"
+  },
+  "keywords": [
+    "vectorwatch"
+  ],
+  "author": "alin.roman@zitec.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VectorWatch/authprovider-oauth1/issues"
+  },
+  "homepage": "https://github.com/VectorWatch/authprovider-oauth1#readme",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "oauth": "^0.9.14",
+    "vectorwatch-authprovider-abstract": "^1.0.1"
+  }
+}
