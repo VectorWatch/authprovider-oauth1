@@ -133,7 +133,7 @@ OAuth1Provider.prototype.getLoginUrlAsync = function() {
         var credentialsKey = _this.getCredentialsKey(partialAuthTokens);
         return _this.storageProvider.storeAuthTokensAsync(credentialsKey, partialAuthTokens).then(function() {
             var parsedUrl = url.parse(_this.options.authorizeUrl, true);
-            parsedUrl.oauth_token = partialAuthTokens.oauth_token;
+            parsedUrl.query.oauth_token = partialAuthTokens.oauth_token;
             delete parsedUrl.search;
 
             return url.format(parsedUrl);
