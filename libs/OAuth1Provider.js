@@ -111,7 +111,7 @@ OAuth1Provider.prototype.getCredentialsKey = function(credentials) {
     }
 
     var hmac = require('crypto').createHmac('sha1', this.options.consumerSecret);
-    hmac.update((credentials || {}).oauth_token || (credentials || {}).token || '');
+    hmac.update(JSON.stringify((credentials || {}).oauth_token || (credentials || {}).token || ''));
     return hmac.digest('hex');
 };
 
