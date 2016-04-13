@@ -106,12 +106,12 @@ OAuth1Provider.prototype.getAuthTokensAsync = function(credentials) {
  * @inheritdoc
  */
 OAuth1Provider.prototype.getCredentialsKey = function(credentials) {
-    if (!credentials || !credentials.oauth_token) {
+    if (!credentials || (!credentials.oauth_token && !credentials.token)) {
         return null;
     }
 
     var hmac = require('crypto').createHmac('sha1', this.options.consumerSecret);
-    hmac.update((credentials || {}).oauth_token || '');
+    hmac.update((credentials || {}).oauth_token || (credentials || {}).token || '');
     return hmac.digest('hex');
 };
 
