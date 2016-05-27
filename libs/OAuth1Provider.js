@@ -13,6 +13,10 @@ var OAuth = require('oauth').OAuth;
 function OAuth1Provider(storageProvider, options) {
     AuthProviderAbstract.call(this, storageProvider);
 
+    if (process.env.SERVICE_ID) {
+        this.options.callbackUrl = "https://apps.vectorwatch.com/" + process.env.SERVICE_ID + "/webhook"
+    }
+
     this.setOptions(options, [
         'consumerKey', 'consumerSecret',
         'requestTokenUrl', 'accessTokenUrl',
